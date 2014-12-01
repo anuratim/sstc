@@ -3,10 +3,32 @@
 <head lang="en">
   <meta charset="UTF-8">
   <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/typeaheadjs.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-<script src="patientData.js"></script>
-<script src="main.js"></script>
+<div class="container">
+  <div class="row">
+    <div class="typeaheadContainer input-group input-group-lg">
+      <input class="form-control" id="typeaheadInput" type="text" placeholder="enter patient uuid">
+    </div>
+
+  </div>
+
+</div>
+
+<!--libs-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.jquery.js"></script>
+<!--end libs-->
+
+<!--source-->
+<script src="js/patientData.js"></script>
+<script src="js/main.js"></script>
+<!--end source-->
+
 </body>
 </html>
