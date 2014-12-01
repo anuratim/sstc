@@ -22,7 +22,11 @@ $(
         displayKey: 'value',
         source: findPatients
       }
-    );
+    )
+      .bind('typeahead:cursorchanged', onSelected)
+      .bind('typeahead:selected', onSelected)
+      .bind('typeahead:autocompleted', onSelected);
+    ;
 
     function findPatients (query, callback) {
       var matches = [];
@@ -35,6 +39,13 @@ $(
         }
       );
       callback(matches);
+    }
+
+    function onSelected (event, object) {
+      var patientID = object.value;
+      var patientMPR = PATIENT_DATA[patientID];
+      $('#patientID').text(patientID);
+      $('#patientMPR').text(patientMPR);
     }
   }
 );
