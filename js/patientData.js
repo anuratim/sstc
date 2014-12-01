@@ -1,3 +1,5 @@
+// JS Object of patient data created via readCSV.js
+
 var PATIENT_DATA = { '5a277365032235cb18c42a31bf5d447c3f088dbe': '0.90909091',
   d5c5bee80d5fb19deac381100896a5762f1f05c6: '1.45780051',
   '56cd120763b477a35249628e05523e33374cdd44': '0.94444444',

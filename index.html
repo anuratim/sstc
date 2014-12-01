@@ -2,20 +2,35 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <title></title>
+  <title>SSTC</title>
+
+  <!--CSS libs-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/typeaheadjs.css">
+  <!--/CSS Libs-->
+
+
+  <!--CSS source-->
   <link rel="stylesheet" href="css/main.css">
+  <!--/CSS source-->
 </head>
+
 <body>
 
 <div class="container">
+
+  <div class="row">
+    <h1>SSTC</h1>
+  </div>
+
+  <!--Row containing typeahead input-->
   <div class="typeaheadRow row">
     <div class="typeaheadContainer input-group input-group-lg">
       <input class="form-control" id="typeaheadInput" type="text" placeholder="enter patient uuid">
     </div>
   </div>
 
+  <!--Row displaying patient uuid & MPR-->
   <div class="showDataRow row">
     <div class="jumbotron">
       <h1>Patient Info</h1>
@@ -26,16 +41,16 @@
 
 </div>
 
-<!--libs-->
+<!--JS libs-->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.jquery.js"></script>
-<!--end libs-->
+<!--/JS libs-->
 
-<!--source-->
+<!-- JS source-->
 <script src="js/patientData.js"></script>
 <script src="js/main.js"></script>
-<!--end source-->
+<!--/JS source-->
 
 </body>
 </html>
