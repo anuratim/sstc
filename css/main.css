@@ -5,3 +5,28 @@
 #typeaheadInput {
   width: 100%;
 }
+
+body {
+    background-color: #00CCFF;
+}
+
+.btn-active {
+    background-color: #FFF;
+    color: #00CCFF;
+}
+
+.btn-inactive {
+    background-color: #00CCFF;
+    color: #FFF;
+}
+
+.btn {
+    border-color: #FFF;
+    border-width: 3px;
+    width: 50%;
+}
+
+.btn-group-lg {
+	width: 100%;
+	margin: 100px 0px 100px;
+}
