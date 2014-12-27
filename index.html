@@ -38,21 +38,29 @@
 
     <!--Row containing typeahead input-->
   <div class="typeaheadRow row">
-    <div class="typeaheadContainer input-group input-group-lg">
-      <input class="form-control" id="typeaheadInput" type="text" placeholder="Enter patient UID">
+    <div class="typeaheadContainer input-group-lg" id="uidinput">
+      <input class="form-control input-lg" id="typeaheadInput" type="text" placeholder="Search for UID">
     </div>
   </div>
+</div>
 
   <!--Row displaying patient uuid & MPR-->
   <div class="showDataRow row">
-    <div class="jumbotron">
-      <h1>Patient Info</h1>
-      <h2>Patient UUID:</h2><h2 id="patientID"></h2>
-      <h2>Patient MPR:</h2><h2 id="patientMPR"></h2>
+    <div class="col-xs-2" id="pillpic">
+      <img src='../img/pill.png'></img>
     </div>
+
+    <div class="col-xs-10" id="mprcontainer">
+      <div id="uidmpr"></div>
+    </div>
+
+    <div class="col-xs-2" id="calpic">
+      <img src='../img/calendar.png'></img>
+    </div>
+
+    <div class="col-xs-10" id="refillcontainer"></div>
   </div>
 
-  </div>
 
 </body>
 </html>

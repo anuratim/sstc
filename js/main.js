@@ -46,11 +46,10 @@ $.when (getData()).done(function (surescriptsData) {
   }
 
   function lookUp (event, object) {
-    var uid = object.value;
-    var mpr = mprDict[uid];
+    var mpr = mprDict[object.value];
+    console.log(mpr);
 
-    $('#patientID').text(uid);
-    $('#patientMPR').text(mpr);
+    $('#uidmpr').text(mpr);
   }
 
 })

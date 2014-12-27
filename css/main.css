@@ -1,6 +1,3 @@
-.typeaheadContainer {
-  width: 100%;
-}
 
 #typeaheadInput {
   width: 100%;
@@ -29,4 +26,41 @@ body {
 .btn-group-lg {
 	width: 100%;
 	margin: 50px 0px 50px;
+}
+
+#uidinput {
+  -webkit-border-radius: 1000px;
+  -moz-border-radius: 1000px;
+  border-radius: 1000px;
+  border: none;
+  margin: 0px 0px 25px 0px;
+}
+
+#pillpic, #calpic {
+	background-color: #E0E0E0;
+	padding: 25px;
+	display: block;
+	text-align: center;
+	clear: left;
+}
+
+#calpic {
+	padding: 24px;
+}
+
+#mprcontainer, #refillcontainer {
+	background-color: #FFF;
+	padding-bottom: 125px;
+	margin-bottom: -125px;
+	display: block;
+	float: right;
+}
+
+#calpic, #refillcontainer {
+	margin-top: 5px;
+}
+
+#uidmpr {
+	margin: auto;
+	display: table-cell;
 }
