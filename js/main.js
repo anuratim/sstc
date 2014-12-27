@@ -1,65 +1,69 @@
-/**
- * Author swaraj
- * Date: 11/30/14
- */
-"use strict";
+$.when (getData()).done(function (surescriptsData) { 
 
-$(
-  function onReady () {
+  var mprDict = {};
+  surescriptsData.forEach (
+      function (object) {
+        var uid = object.uid;
+        if (! (uid in mprDict)) {
+            mprDict[uid] =0;
+        }
+        mprDict[uid] = Math.round(Number(object.mpr) * 100) / 100;
+      }
+    )
 
-    // prepare data
-    var PATIENT_KEYS = Object.keys(PATIENT_DATA);
+  var uids = Object.keys(mprDict);
 
-    // init typeahead
-    $('#typeaheadInput').typeahead(
+  $('#typeaheadInput').typeahead(
       {
         highlight: true,
         hint: true,
         minLength: 1
       },
       {
-        name: 'patients',
+        name: 'uids',
         displayKey: 'value',
-        source: findPatients
+        source: findMatch
       }
     )
-      .bind('typeahead:cursorchanged', onSelected)
-      .bind('typeahead:selected', onSelected)
-      .bind('typeahead:autocompleted', onSelected);
+      .bind('typeahead:cursorchanged', lookUp)
+      .bind('typeahead:selected', lookUp)
+      .bind('typeahead:autocompleted', lookUp);
 
-    /**
-     * Search for matching patient uuid in PATIENT_KEYS. It is called by
-     * typeahead every time a character is entered in the input field
-     *
-     * @param query search query from input field
-     * @param callback call with results
-     */
-    function findPatients (query, callback) {
-      var matches = [];
-      PATIENT_KEYS.forEach(
-        function testPatient (patientID) {
-          // polyfill of ES6 startsWith
-          var isMatch = patientID.lastIndexOf(query) === 0;
-          if (isMatch) {
-            // typeahead is expecting objects with a key named value
-            matches.push({value: patientID})
-          }
+  function findMatch (query, callback) {
+    var matches = [];
+    
+    uids.forEach(
+      function testPatient (uid) {
+        // polyfill of ES6 startsWith
+        var isMatch = uid.lastIndexOf(query) === 0;
+        if (isMatch) {
+          // typeahead is expecting objects with a key named value
+          matches.push({value: uid})
         }
-      );
-      callback(matches);
-    }
-
-    /**
-     * Called anytime a patient is selected from typeahead
-     *
-     * @param event unused jQuery event
-     * @param object value created by findPatients
-     */
-    function onSelected (event, object) {
-      var patientID = object.value;
-      var patientMPR = PATIENT_DATA[patientID];
-      $('#patientID').text(patientID);
-      $('#patientMPR').text(patientMPR);
-    }
+      }
+    );
+    callback(matches);
   }
-);
+
+  function lookUp (event, object) {
+    var uid = object.value;
+    var mpr = mprDict[uid];
+
+    $('#patientID').text(uid);
+    $('#patientMPR').text(mpr);
+  }
+
+})
+
+function getData () {
+    return $.ajax({
+      dataType: 'json',
+      url: '../data/surescripts.json',
+      data: '',
+      success: function(data) {
+         return data;
+        }
+    });
+}
+
+

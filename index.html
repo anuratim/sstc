@@ -12,22 +12,34 @@
   <!--CSS source-->
   <link rel="stylesheet" href="css/main.css">
   <!--/CSS source-->
+
+  <!--JS libs-->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.jquery.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <!--/JS libs-->
+
+  <!-- JS source-->
+  <script src="js/patientData.js"></script>
+  <script src="js/main.js"></script>
+  <!--/JS source-->
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-<div class="btn-group btn-group-lg" role="group" aria-label="...">
-  <div type="button" class="btn btn-active">Patient</div>
-  <div type="button" class="btn btn-inactive">Population</div>
-</div>
+  <div class="btn-group btn-group-lg" role="group" aria-label="...">
+    <div type="button" class="btn btn-active">PATIENT</div>
+    <div type="button" class="btn btn-inactive">POPULATION</div>
+  </div>
 
 
-  <!--Row containing typeahead input-->
+    <!--Row containing typeahead input-->
   <div class="typeaheadRow row">
     <div class="typeaheadContainer input-group input-group-lg">
-      <input class="form-control" id="typeaheadInput" type="text" placeholder="enter patient uuid">
+      <input class="form-control" id="typeaheadInput" type="text" placeholder="Enter patient UID">
     </div>
   </div>
 
@@ -40,19 +52,7 @@
     </div>
   </div>
 
-</div>
-
-<!--JS libs-->
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.jquery.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<!--/JS libs-->
-
-<!-- JS source-->
-<script src="js/patientData.js"></script>
-<script src="js/main.js"></script>
-<!--/JS source-->
+  </div>
 
 </body>
 </html>
