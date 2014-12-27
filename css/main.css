@@ -36,31 +36,29 @@ body {
   margin: 0px 0px 25px 0px;
 }
 
+#mprbox, #refillbox {
+	clear: left;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	min-height: 76px;
+	background-color: #FFF;
+}
+
 #pillpic, #calpic {
 	background-color: #E0E0E0;
-	padding: 25px;
+	padding: 10px 0px 10px 0px;
 	display: block;
 	text-align: center;
-	clear: left;
+	min-width: 150px;
 }
 
-#calpic {
-	padding: 24px;
+#refillbox {
+	margin-top: 15px;
 }
 
-#mprcontainer, #refillcontainer {
-	background-color: #FFF;
-	padding-bottom: 125px;
-	margin-bottom: -125px;
-	display: block;
-	float: right;
-}
-
-#calpic, #refillcontainer {
-	margin-top: 5px;
-}
-
-#uidmpr {
-	margin: auto;
-	display: table-cell;
+img {
+	height: auto;
+	max-width: 100%;
+	width: auto;
 }
