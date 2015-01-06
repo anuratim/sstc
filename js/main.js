@@ -49,7 +49,8 @@ $.when (getData()).done(function (surescriptsData) {
     var mpr = mprDict[object.value];
     console.log(mpr);
 
-    $('#uidmpr').text(mpr);
+    $('#mprNumber').text(mpr);
+    $('#mprTag').text("MPR");
   }
 
 })

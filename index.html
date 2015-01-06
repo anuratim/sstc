@@ -6,6 +6,7 @@
   <!--CSS libs-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/typeaheadjs.css">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
   <!--/CSS Libs-->
 
 
@@ -42,26 +43,26 @@
       <input class="form-control input-lg" id="typeaheadInput" type="text" placeholder="Search for UID">
     </div>
   </div>
-</div>
+
 
   <!--Row displaying patient uuid & MPR-->
-  <div class="showDataRow row">
-    <div id="mprbox">
+  <div class="showDataRow">
+    <div class="row" id="mprbox">
 
       <div class="col-xs-2" id="pillpic">
-        <img src='../img/pill.png'></img>
+        <div class="picbox"> <img src='../img/pill.png'></img> </div>
       </div>
 
-      <div class="col-xs-10" id="mprcontainer">
-        <div id="uidmpr"></div>
+      <div class="col-xs-10 row-fluid" id="mprcontainer">
+        <span class="col-xs-4" id="mprNumber"></span><span class="boxtext" id="mprTag"></span>
       </div>
 
     </div>
 
-    <div id="refillbox">
+    <div class="row" id="refillbox">
 
       <div class="col-xs-2" id="calpic">
-        <img src='../img/calendar.png'></img>
+        <div class="picbox"> <img src='../img/calendar.png'></img> </div>
       </div>
 
       <div class="col-xs-10" id="refillcontainer">
@@ -69,6 +70,7 @@
 
     </div>
 
+  </div>
   </div>
 
 
