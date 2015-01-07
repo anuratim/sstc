@@ -1,13 +1,16 @@
 $.when (getData()).done(function (surescriptsData) { 
 
+  console.log(surescriptsData);
+
   var mprDict = {};
   surescriptsData.forEach (
       function (object) {
         var uid = object.uid;
         if (! (uid in mprDict)) {
-            mprDict[uid] =0;
+            mprDict[uid]={mpr:0, mprPercentile:0, missedRefills:0, refillPercentile:0, missedDoses:0};
         }
-        mprDict[uid] = Math.round(Number(object.mpr) * 100) / 100;
+        mprDict[uid]['mpr'] = Math.round(Number(object.mpr) * 100) / 100;
+        // added mpr above
       }
     )
 
@@ -46,7 +49,7 @@ $.when (getData()).done(function (surescriptsData) {
   }
 
   function lookUp (event, object) {
-    var mpr = mprDict[object.value];
+    var mpr = mprDict[object.value]['mpr'];
     console.log(mpr);
 
     $('#mprNumber').text(mpr);

@@ -65,13 +65,14 @@ img {
 #mprNumber {
 	font-size: 80px;
 	color: #0071BC;
-	margin-left: 10%;
-	margin-top: 3%;
 }
 
 .boxtext {
 	font-size: 40px;
 	color: #0071BC;
-	display: table-cell;
-	vertical-align: middle;
+	margin-left: 10px;
+}
+
+.mprInfo {
+	padding: 33px 0 0 15px;
 }
