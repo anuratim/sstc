@@ -1,7 +1,5 @@
 $.when (getData()).done(function (surescriptsData) { 
 
-  console.log(surescriptsData);
-
   var mprDict = {};
   surescriptsData.forEach (
       function (object) {
@@ -10,7 +8,10 @@ $.when (getData()).done(function (surescriptsData) {
             mprDict[uid]={mpr:0, mprPercentile:0, missedRefills:0, refillPercentile:0, missedDoses:0};
         }
         mprDict[uid]['mpr'] = Math.round(Number(object.mpr) * 100) / 100;
-        // added mpr above
+        mprDict[uid]['mprPercentile'] = numeral(object.mpr_percentile).format('0.0%');
+        mprDict[uid]['missedRefills'] = object.missed_refills;
+        mprDict[uid]['refillPercentile'] = numeral(object.refill_percentile).format('0.0%');
+        mprDict[uid]['missedDoses'] = object.missed_doses;
       }
     )
 
@@ -50,10 +51,27 @@ $.when (getData()).done(function (surescriptsData) {
 
   function lookUp (event, object) {
     var mpr = mprDict[object.value]['mpr'];
+    var mprPercentile = mprDict[object.value]['mprPercentile'];
+    var missedRefills = mprDict[object.value]['missedRefills'];
+    var refillPercentile = mprDict[object.value]['refillPercentile'];
+    var missedDoses = mprDict[object.value]['missedDoses'];
+
     console.log(mpr);
+    console.log(mprPercentile);
 
     $('#mprNumber').text(mpr);
     $('#mprTag').text("MPR");
+
+    $('#mprPercentile1').text("That's better than");
+    $('#mprPercentileNum').text(mprPercentile);
+    $('#mprPercentile2').text("of your patients.");
+
+    $('#refillNumber').text(missedRefills);
+    $('#refillTag').text("MISSED REFILLS");
+
+    $('#refillPercentile1').text("That's better than");
+    $('#refillPercentileNum').text(refillPercentile);
+    $('#refillPercentile2').text("of your patients.");
   }
 
 })

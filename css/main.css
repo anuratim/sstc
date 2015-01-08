@@ -62,17 +62,35 @@ img {
 	width: auto;
 }
 
-#mprNumber {
+#mprNumber, #refillNumber {
 	font-size: 80px;
 	color: #0071BC;
 }
 
 .boxtext {
-	font-size: 40px;
+	font-size: 30px;
 	color: #0071BC;
 	margin-left: 10px;
 }
 
 .mprInfo {
-	padding: 33px 0 0 15px;
+	padding: 10px 0 0 15px;
 }
+
+ #mprPercentile1, #mprPercentileNum, #mprPercentile2, #refillPercentile1, #refillPercentileNum, #refillPercentile2 {
+ 	font-size: 20px;
+ 	color: #0071BC;
+ 	margin-left: 5px;
+ }
+
+ .mprPercentileInfo, .refillPercentileInfo {
+ 	padding-left: 15px;
+ }
+
+ .refillInfo {
+ 	padding: 10px 0 0 50px;
+ }
+
+ #refillTag {
+ 	padding-left: 30px;
+ }

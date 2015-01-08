@@ -19,6 +19,8 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.jquery.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+
   <!--/JS libs-->
 
   <!-- JS source-->
@@ -54,8 +56,11 @@
       </div>
 
       <div class="col-xs-10" id="mprcontainer">
-        <div class="mprInfo">
+        <div class="mprInfo row">
           <span id="mprNumber"></span><span class="boxtext" id="mprTag"></span>
+        </div>
+        <div class="mprPercentileInfo row">
+          <span id="mprPercentile1"></span><span id="mprPercentileNum"></span><span id="mprPercentile2"></span>
         </div>
         
       </div>
@@ -69,6 +74,12 @@
       </div>
 
       <div class="col-xs-10" id="refillcontainer">
+        <div class="refillInfo row">
+          <span id="refillNumber"></span><span class="boxtext" id="refillTag"></span>
+        </div>
+        <div class="refillPercentileInfo row">
+          <span id="refillPercentile1"></span><span id="refillPercentileNum"></span><span id="refillPercentile2"></span>
+        </div>
       </div>
 
     </div>
