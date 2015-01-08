@@ -7,12 +7,12 @@ body {
     font-family: 'PT Sans', sans-serif;
 }
 
-.btn-active {
+.btn-active.pageTitle {
     background-color: #FFF;
     color: #00CCFF;
 }
 
-.btn-inactive {
+.btn-inactive.pageTitle {
     background-color: #00CCFF;
     color: #FFF;
 }
@@ -45,7 +45,7 @@ body {
 	background-color: #FFF;
 }
 
-#pillpic, #calpic {
+#pillpic, #calpic, #mailpic {
 	background-color: #E0E0E0;
 	padding: 50px 0px 50px 00px;
 	display: block;
@@ -94,3 +94,51 @@ img {
  #refillTag {
  	padding-left: 30px;
  }
+
+ #emailbox {
+ 	clear: left;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	height: 80px;
+	background-color: #989898;
+	margin-top: 3px;
+ }
+
+ #mailpic {
+	background-color: #989898;
+	padding: 0px 0px 0px 0px;
+	display: block;
+	text-align: center;
+}
+
+.emailInfo {
+	margin-top: 20px;
+}
+
+#emailText {
+	font-size: 30px;
+	color: #FFF;
+	margin-left: 10px;
+}
+
+
+/*scatter styling*/
+
+#chart {
+height: 500px;
+}
+
+.main text {
+    font: 10px sans-serif;	
+}
+
+.axis line, .axis path {
+    shape-rendering: crispEdges;
+    stroke: black;
+    fill: none;
+}
+
+circle {
+    fill: steelblue;
+}

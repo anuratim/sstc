@@ -24,7 +24,6 @@
   <!--/JS libs-->
 
   <!-- JS source-->
-  <script src="js/patientData.js"></script>
   <script src="js/main.js"></script>
   <!--/JS source-->
 </head>
@@ -33,9 +32,9 @@
 
   <div class="container">
 
-  <div class="btn-group btn-group-lg" role="group" aria-label="...">
-    <div type="button" class="btn btn-active">PATIENT</div>
-    <div type="button" class="btn btn-inactive">POPULATION</div>
+  <div class="btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+    <a type="button" class="btn btn-active pageTitle">PATIENT</a>
+    <a href="population.html" type="button" class="btn btn-inactive pageTitle">POPULATION</a>
   </div>
 
 
@@ -84,7 +83,23 @@
 
     </div>
 
+    <a href="mailto:patient@example.com?subject=Your%20medication%20adherence" target="_top">
+    <div class="row" id="emailbox">
+        <div class="col-xs-2" id="mailpic">
+            <div class="picbox"> <img src='../img/envelope.png'></img> </div>
+        </div>
+
+        <div class="col-xs-10" id="emailcontainer"> 
+          <div class="emailInfo row">
+            <span id="emailText">Email patient</span>
+        </div>
+        </div>  
+    </div>
+  </a>
+
   </div>
+
+
   </div>
 
 
