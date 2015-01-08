@@ -49,9 +49,16 @@ d3.json("../data/surescripts.json", function(error, data) {
     d.missed_doses = +d.missed_doses;
   });
 
+data = data.filter(
+    function mprFilter(d) {
+      return d.mpr <= 1 && d.mpr > 0;
+    }
+  )
+
+console.log(data);
   // don't want dots overlapping axis, so add in buffer to data domain
-  xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
-  yScale.domain([d3.min(data, yValue)-1, d3.max(data, yValue)+1]);
+  xScale.domain([d3.max(data, xValue)+1, d3.min(data, xValue)]);
+  yScale.domain([d3.min(data, yValue)-0.1, d3.max(data, yValue)+0.1]);
 
   // x-axis
   svg.append("g")
@@ -100,28 +107,6 @@ d3.json("../data/surescripts.json", function(error, data) {
                .duration(500)
                .style("opacity", 0);
       });
-
-  // draw legend
-  var legend = svg.selectAll(".legend")
-      .data(color.domain())
-    .enter().append("g")
-      .attr("class", "legend")
-      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-
-  // draw legend colored rectangles
-  legend.append("rect")
-      .attr("x", width - 18)
-      .attr("width", 18)
-      .attr("height", 18)
-      .style("fill", color);
-
-  // draw legend text
-  legend.append("text")
-      .attr("x", width - 24)
-      .attr("y", 9)
-      .attr("dy", ".35em")
-      .style("text-anchor", "end")
-      .text(function(d) { return d;})
 });
 
 });
