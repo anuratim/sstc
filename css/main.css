@@ -114,3 +114,8 @@ img {
 	color: #FFF;
 	margin-left: 10px;
 }
+
+.metricLabelContainer {
+	padding: 55px 0 0 5px;
+
+}
