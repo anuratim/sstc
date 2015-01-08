@@ -93,7 +93,7 @@ console.log(data);
       .attr("r", 3.5)
       .attr("cx", xMap)
       .attr("cy", yMap)
-      .style("fill", "#00CCFF") 
+      .style("fill", "#0071BC") 
       .on("mouseover", function(d) {
           tooltip.transition()
                .duration(100)
