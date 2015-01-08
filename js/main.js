@@ -1,3 +1,15 @@
+$(
+  function onReady () {
+    var queryString = window.location.search;
+    var parsed = URI.parseQuery(queryString);
+
+    if (parsed.uid) {
+      $('#typeaheadInput').val(parsed.uid);
+    }
+  }
+);
+
+
 $.when (getData()).done(function (surescriptsData) { 
 
   var mprDict = {};

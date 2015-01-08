@@ -1,8 +1,9 @@
 $( document ).ready(function () {
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    myDiv = document.getElementById("scatter").clientWidth,
-    width = myDiv - margin.left - margin.right,
-    height = 900 - margin.top - margin.bottom;
+    myWidth = document.getElementById("scatter").clientWidth,
+    myHeight = window.innerHeight - 225,
+    width = myWidth - margin.left - margin.right,
+    height = myHeight - margin.top - margin.bottom;
 
 /* 
  * value accessor - returns the value to encode for a given data object.
@@ -51,13 +52,13 @@ d3.json("../data/surescripts.json", function(error, data) {
 
 data = data.filter(
     function mprFilter(d) {
-      return d.mpr <= 1 && d.mpr > 0;
+      return d.mpr <= 1 && d.mpr > 0.06;
     }
   )
 
 console.log(data);
   // don't want dots overlapping axis, so add in buffer to data domain
-  xScale.domain([d3.max(data, xValue)+1, d3.min(data, xValue)]);
+  xScale.domain([d3.max(data, xValue)+2, d3.min(data, xValue)]);
   yScale.domain([d3.min(data, yValue)-0.1, d3.max(data, yValue)+0.1]);
 
   // x-axis
@@ -99,13 +100,17 @@ console.log(data);
                .style("opacity", 1);
           tooltip.html(d.uid + "<br/> (MPR: " + yValue(d) 
           + ", Missed doses: " + xValue(d) + ")")
-               .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 50) + "px");
+               .style("left", (d3.event.pageX - 250) + "px")
+               .style("top", (d3.event.pageY - 60) + "px");
       })
       .on("mouseout", function(d) {
           tooltip.transition()
                .duration(500)
                .style("opacity", 0);
+      })
+      .on("click", function(d) {
+        var url = "./index.html?uid=" + d.uid;
+        window.location.href = url;
       });
 });
 

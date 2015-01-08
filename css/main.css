@@ -65,15 +65,16 @@ img {
 #mprNumber, #refillNumber {
 	font-size: 80px;
 	color: #0071BC;
+	text-align: center;
 }
 
 .boxtext {
-	font-size: 30px;
+	font-size: 25px;
 	color: #0071BC;
 	margin-left: 10px;
 }
 
-.mprInfo {
+.mprInfo, .refillInfo {
 	padding: 10px 0 0 15px;
 }
 
@@ -85,14 +86,6 @@ img {
 
  .mprPercentileInfo, .refillPercentileInfo {
  	padding-left: 15px;
- }
-
- .refillInfo {
- 	padding: 10px 0 0 50px;
- }
-
- #refillTag {
- 	padding-left: 30px;
  }
 
  #emailbox {
@@ -120,25 +113,4 @@ img {
 	font-size: 30px;
 	color: #FFF;
 	margin-left: 10px;
-}
-
-
-/*scatter styling*/
-
-#chart {
-height: 500px;
-}
-
-.main text {
-    font: 10px sans-serif;	
-}
-
-.axis line, .axis path {
-    shape-rendering: crispEdges;
-    stroke: black;
-    fill: none;
-}
-
-circle {
-    fill: steelblue;
 }
