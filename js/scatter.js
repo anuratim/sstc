@@ -98,7 +98,7 @@ console.log(data);
           tooltip.transition()
                .duration(100)
                .style("opacity", 1);
-          tooltip.html(d.uid + "<br/> (MPR: " + yValue(d) 
+          tooltip.html(d.uid + "<br/> (MPR: " + Math.round(Number(yValue(d)) * 100) / 100 
           + ", Missed doses: " + xValue(d) + ")")
                .style("left", (d3.event.pageX - 250) + "px")
                .style("top", (d3.event.pageY - 60) + "px");
